@@ -2,3 +2,56 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    background: linear-gradient(120deg, #4860ad, #c24e4e);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+h1 {
+    align-items: center;
+    color: white;
+}
+
+#periodic {
+    background-color: cornsilk;
+    align-items: center;
+    margin: 0 auto;
+    border-spacing: 3px;
+}
+
+#periodic tr td {
+    color: black;
+    font-weight: bolder;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 5px;
+}
+
+.row-table {
+    display: flex;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#r4 td:nth-child(2) {
+    background-color: cyan;
+}
+
+#r3 td:nth-child(5) {
+    background-color: cyan;
+}
+
+#r2 td:nth-child(3) {
+    background-color: cyan;
+}
