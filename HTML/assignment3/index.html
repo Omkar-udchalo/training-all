@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table </title>
+    <script>
+        const imageData = ['https://media.istockphoto.com/photos/cooked-rice-picture-id491090528?k=20&m=491090528&s=612x612&w=0&h=oKwbkVWhU_17ZBhB4v3SKOTGT85nmi2YS7KbPPa-x8o=', 'https://images.unsplash.com/photo-1517448931760-9bf4414148c5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWlsa3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80', 'https://vistapointe.net/images/pear-1.jpg', 'https://www.foodbusinessnews.net/ext/resources/2021/2/OrganicWheat_Lead.jpg?1613050685', 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', 'https://media.istockphoto.com/photos/red-apple-with-leaf-isolated-on-white-background-picture-id185262648?b=1&k=20&m=185262648&s=170667a&w=0&h=2ouM2rkF5oBplBmZdqs3hSOdBzA4mcGNCoF2P0KUMTM=', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdLPKG0Itly4KJl6KF9ZjEHP9UkclvCYEfHmoA50o1Zpw1iQP005GIVP6u9IHq-3Yllmw&usqp=CAU', 'https://solidstarts.com/wp-content/uploads/when-can-babies-eat-eggs.jpg', 'https://i.pinimg.com/originals/d6/79/23/d67923fd3a82b56925cc6162c80ca3cd.jpg']
+
+        function showImage(num) {
+            console.log(num);
+            const parent = document.getElementById('pic');
+            if (parent.hasChildNodes) {
+                parent.removeChild(parent.childNodes[0]);
+            }
+            var img = document.createElement('img');
+            img.src = imageData[num];
+            img.height = "400"
+            img.width = "400"
+            parent.appendChild(img);
+
+        }
+        // console.log(imageData);
+    </script>
+</head>
+
+<body>
+    <header>
+        <center>
+            <h1>TABLE OF FOODS</h1>
+        </center>
+    </header>
+    <section>
+        <center>
+            <table border="1px" style="width: 300px;">
+                <tr style="height: 50px;" align="center">
+                    <th>Go</th>
+                    <th>Grow</th>
+                    <th>Glow</th>
+                </tr>
+                <tr style="height: 50px;" align="center">
+                    <td><a href="#" onclick="showImage(0)">Rice</a></td>
+                    <td><a href="#" onclick="showImage(1)">Milk</a></td>
+                    <td><a href="#" onclick="showImage(2)">Pear</a></td>
+                </tr>
+                <tr style="height: 50px;" align="center">
+                    <td><a href="#" onclick="showImage(3)">Wheat</td>
+                    <td><a href="#" onclick="showImage(4)">Chicken</a></td>
+                    <td><a href="#" onclick="showImage(5)">Apple</a></td>
+                </tr>
+                <tr style="height: 50px;" align="center">
+                    <td><a href="#" onclick="showImage(6)">Bread</a></td>
+                    <td><a href="#" onclick="showImage(7)">Eggs</a></td>
+                    <td><a href="#" onclick="showImage(8)">Vegetable</a></td>
+                </tr>
+
+            </table>
+        </center>
+    </section>
+
+    <section>
+        <center>
+            <div id="pic">
+
+            </div>
+        </center>
+    </section>
+</body>
+
+
+<footer style="margin-top: 400px;">By Omkar Mankar &copy;</footer>
+
+</html>

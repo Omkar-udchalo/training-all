@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+</head>
+
+<body>
+    <header>
+        <center><strong>Employee Details</strong></center>
+    </header>
+    <section style="margin-top: 50px">
+        <center>
+            <form>
+                <table border="1px">
+                    <tr>
+                        <th colspan="3">Name</th>
+                        <th colspan="3">Details</th>
+                        <th colspan="3">Address</th>
+                    </tr>
+                    <tr valign="center" style="height: 50px">
+                        <th>Sr no.</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Percentage</th>
+                        <th>Salary</th>
+                        <th>Department</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>PinCode</th>
+                    </tr>
+                    <tr align="center" style="height: 50px">
+                        <td>1</td>
+                        <td>Omkar</td>
+                        <td>Mankar</td>
+                        <td>80</td>
+                        <td>50000 &#8377;</td>
+                        <td rowspan="3">Technology</td>
+                        <td>
+                            <select>
+                  <option value="">--Choose State--</option>
+                  <option value="mah">Maharshtra</option>
+                  <option value="guj">Gujrat</option>
+                  <option value="utr">Uttarakhand</option>
+                  <option value="up">Uttar Pradesh</option>
+                </select>
+                        </td>
+                        <td>
+                            <select>
+                  <option value="">--Choose City--</option>
+                  <option value="shr">Shrirampur</option>
+                  <option value="sur">Surat</option>
+                  <option value="deh">Dehradun</option>
+                  <option value="luc">Lucknow</option>
+                </select>
+                        </td>
+                        <td>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="6" />
+                        </td>
+                    </tr>
+
+                    <tr align="center" style="height: 50px">
+                        <td>2</td>
+                        <td>Raj</td>
+                        <td>Sharma</td>
+                        <td>70</td>
+                        <td>5000 &dollar;</td>
+                        <td>
+                            <select>
+                  <option value="">--Choose State--</option>
+                  <option value="mah">Maharshtra</option>
+                  <option value="guj">Gujrat</option>
+                  <option value="utr">Uttarakhand</option>
+                  <option value="up">Uttar Pradesh</option>
+                </select>
+                        </td>
+                        <td>
+                            <select>
+                  <option value="">--Choose City--</option>
+                  <option value="shr">Shrirampur</option>
+                  <option value="sur">Surat</option>
+                  <option value="deh">Dehradun</option>
+                  <option value="luc">Lucknow</option>
+                </select>
+                        </td>
+                        <td>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="6" />
+                        </td>
+                    </tr>
+                    <tr align="center" style="height: 50px">
+                        <td>3</td>
+                        <td>Ram</td>
+                        <td>Kumar</td>
+                        <td>85</td>
+                        <td>50000 &#8377;</td>
+                        <td>
+                            <select>
+                  <option value="">--Choose State--</option>
+                  <option value="mah">Maharshtra</option>
+                  <option value="guj">Gujrat</option>
+                  <option value="utr">Uttarakhand</option>
+                  <option value="up">Uttar Pradesh</option>
+                </select>
+                        </td>
+                        <td>
+                            <select>
+                  <option value="">--Choose City--</option>
+                  <option value="shr">Shrirampur</option>
+                  <option value="sur">Surat</option>
+                  <option value="deh">Dehradun</option>
+                  <option value="luc">Lucknow</option>
+                </select>
+                        </td>
+                        <td>
+                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="6" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </section>
+</body>
+<footer style="margin-top: 250px">By Omkar Mankar &copy;</footer>
+
+</html>

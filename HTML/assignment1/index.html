@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <script type="text/javascript">
+        function storeData() {
+            console.log("Hi");
+            let username = document.getElementById("username");
+            let password = document.getElementById("password");
+            // console.log(username.value);
+            if (username.value.trim() !== '' && password.value.trim() !== '') {
+                localStorage.setItem('username', username.value)
+                localStorage.setItem('password', password.value)
+                username.value = ''
+                password.value = ''
+                alert('Stored the Data');
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <center>
+            <h1><strong>Login Form</strong></h1>
+        </center>
+    </header>
+    <section>
+        <center>
+            <figure>
+                <img src="https://opj.remotlog.com/images/login.jpg" alt="Login Image" height="100px" width="100px">
+            </figure>
+
+            <section>
+                <form action="#" onsubmit="storeData()">
+                    <label> <strong>Username</strong> &nbsp;&nbsp;</label></h2>
+                    <input type="text" required id="username" placeholder="Enter Username" title="Must be Alphanumeric,First Character Uppercase eg.(Omkar12)" minlength="4" maxlength="8" pattern="^[A-Z][a-z]*[0-9]+$">
+                    <br/>
+                    <br/>
+                    <label> <strong>Password</strong> &nbsp;&nbsp;</label>
+                    <input type="password" required id="password" placeholder="Enter Password" minlength="8" maxlength="16">
+                    <br/>
+                    <br/>
+                    <input type="submit">
+                    <!-- <button type="submit" id="submit" onclick="storeData()">Submit </button> -->
+                </form>
+            </section>
+        </center>
+    </section>
+
+</body>
+<footer style="margin-top: 250px;">By Omkar Mankar &copy;</footer>
+
+</html>
