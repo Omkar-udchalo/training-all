@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Timer</title>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+        body {
+            background-color: black;
+            font-family: "Righteous", cursive;
+            color: rgb(52, 204, 235);
+            font-size: 64px;
+        }
+        
+        .time {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        ion-icon {
+            font-size: 64px;
+            fill: cornflowerblue;
+        }
+        
+        ion-icon:hover {
+            fill: cyan;
+            cursor: pointer;
+        }
+        
+        button {
+            border: none;
+            background: black;
+        }
+        
+        button p {
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="time">
+        <h1 class="heading">Timer 🕐</h1>
+        <div id="timer">00:00:00</div>
+        <div class="controls">
+            <button ion-button menuToggle="left" start id="play">
+          <ion-icon name="play"></ion-icon>
+          <p>PLAY</p>
+        </button>
+            <button ion-button menuToggle="left" start id="pause">
+          <ion-icon name="pause"></ion-icon>
+          <p>PAUSE</p>
+        </button>
+            <button ion-button menuToggle="left" start id="reset">
+          <ion-icon name="refresh"></ion-icon>
+          <p>RESET</p>
+        </button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
