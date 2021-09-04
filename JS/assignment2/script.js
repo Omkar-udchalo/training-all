@@ -23,26 +23,30 @@ function timeStart() {
 
         let currentDate = new Date(second);
         timer.innerHTML =
-            ("0" + currentDate.getUTCHours()).slice(-2) +
+            "0" +
+            currentDate.getUTCHours() +
             ":" +
-            ("0" + currentDate.getUTCMinutes()).slice(-2) +
+            ("0" + currentDate.getUTCMinutes()) +
             ":" +
-            ("0" + currentDate.getUTCSeconds()).slice(-2);
+            ("0" + currentDate.getUTCSeconds());
     }, 1000);
 }
 
 function timePaused() {
+    localStorage.setItem("time", timer.innerText);
     clearInterval(stopwatch);
 }
 
 function timeReset() {
     setInterval(stopwatch);
     second = 0;
-    timer.innerHTML = "HH:MM:SS";
+    clearInterval(stopwatch);
+    timer.innerHTML = "00:00:00";
 }
 
 play.addEventListener("click", () => {
     console.log("PLAY");
+
     timeStart();
 });
 pause.addEventListener("click", () => {

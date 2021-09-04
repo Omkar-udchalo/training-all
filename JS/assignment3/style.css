@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+body {
+    background: linear-gradient(120deg, rgb(52, 123, 156), rgb(76, 204, 114));
+    font-family: "Acme", sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.container {
+    color: black;
+    background-color: rgb(129, 172, 221);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.username-field {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.choice {}
+
+button {
+    margin-top: 15px;
+    padding: 20px;
+}
+
+#error {
+    display: table;
+    margin: 0 auto;
+    color: red;
+}
