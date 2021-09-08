@@ -28,6 +28,10 @@ var Main = /** @class */ (function (_super) {
         cls.class_no = 5;
         cls.addTeacherToClass(101, ["5A"], ["os", "cn"]);
         cls.addTeacherToClass(102, ["5B"], ["ml", "ai"]);
+        cls.addTeacherToClass(101, ["5A"], ["os", "cn"]);
+        cls.addTeacherToClass(102, ["5B"], ["ml", "ai"]);
+        cls.addTeacherToClass(101, ["5A"], ["os", "cn"]);
+        cls.addTeacherToClass(102, ["5B"], ["ml", "ai"]);
         cls.addStudentsToClass("5A", ["os", "cn"], 41239);
         cls.addStudentsToClass("5B", ["ml", "ics"], 41101);
         this.myclasses.push(cls);

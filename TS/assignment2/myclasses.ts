@@ -7,14 +7,23 @@ export class MyClass {
   constructor() {}
 
   addTeacherToClass(teacherId: number, divTeach: string[], subject: string[]) {
-    var teachData = new Teacher();
-    teachData.addTeacher(teacherId, { div: divTeach, subject: subject });
-    this.teachers.push(teachData);
+    if (this.teachers.length < 5) {
+      var teachData = new Teacher();
+      teachData.addTeacher(teacherId, { div: divTeach, subject: subject });
+      this.teachers.push(teachData);
+    } else {
+      console.log("Cannot add more than 5 teachers");
+      return;
+    }
   }
 
   addStudentsToClass(name: string, subj: string[], roll: number) {
-    var studData = new StudentData(name, subj, roll);
-    this.students.push(studData);
+    if (this.students.length <= 60) {
+      var studData = new StudentData(name, subj, roll);
+      this.students.push(studData);
+    } else {
+      console.log("Cannot add more than 60 students");
+    }
   }
 
   displayData(classObj: MyClass) {

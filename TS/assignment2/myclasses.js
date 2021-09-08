@@ -9,13 +9,24 @@ var MyClass = /** @class */ (function () {
         this.students = [];
     }
     MyClass.prototype.addTeacherToClass = function (teacherId, divTeach, subject) {
-        var teachData = new teacher_1.Teacher();
-        teachData.addTeacher(teacherId, { div: divTeach, subject: subject });
-        this.teachers.push(teachData);
+        if (this.teachers.length < 5) {
+            var teachData = new teacher_1.Teacher();
+            teachData.addTeacher(teacherId, { div: divTeach, subject: subject });
+            this.teachers.push(teachData);
+        }
+        else {
+            console.log("Cannot add more than 5 teachers");
+            return;
+        }
     };
     MyClass.prototype.addStudentsToClass = function (name, subj, roll) {
-        var studData = new student_1.StudentData(name, subj, roll);
-        this.students.push(studData);
+        if (this.students.length <= 60) {
+            var studData = new student_1.StudentData(name, subj, roll);
+            this.students.push(studData);
+        }
+        else {
+            console.log("Cannot add more than 60 students");
+        }
     };
     MyClass.prototype.displayData = function (classObj) {
         console.log("Teacher Data");
