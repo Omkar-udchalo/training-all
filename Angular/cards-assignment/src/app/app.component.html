@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cards</title>
+</head>
+
+<body style="background-color: blanchedalmond">
+    <!-- <header> -->
+    <div class="header">
+        <h2>Assignment 1 of Angular</h2>
+        <!-- <button (click)="retriveAllData()">Show Cart</button> -->
+        <a href="#" class="notification">
+            <span>Add to Cart</span>
+            <span class="badge">{{ itemCounter }}</span>
+        </a>
+    </div>
+    <!-- </header> -->
+    <section *ngIf="onLoad">
+        <div class="container">
+            <div class="col1" id="col1">
+                <div *ngFor="let item of cardData; let i = index">
+                    <div *ngIf="i < 3" class="card" id="card{{ item.id }}" (click)="onClick($event)" [ngClass]="[item.clicked ? changeColor : '']">
+                        <div class="upper-container">
+                            <h2>{{ item.heading }}</h2>
+                            <img src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" class="container-img" />
+                        </div>
+                        <hr />
+                        <div class="lower-container">
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.detail }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="col2">
+                <div *ngFor="let item of cardData; let i = index">
+                    <div *ngIf="i >= 3 && i <= 5" class="card" id="{{ item.id }}" (click)="onClick($event)" [ngClass]="[item.clicked ? changeColor : '']">
+                        <div class="upper-container">
+                            <h2>{{ item.heading }}</h2>
+                            <img src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" class="container-img" />
+                        </div>
+                        <hr />
+                        <div class="lower-container">
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.detail }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="col3">
+                <div class="" *ngFor="let item of cardData; let i = index">
+                    <div *ngIf="i >= 6 && i <= 8" class="card" id="{{ item.id }}" (click)="onClick($event)" [ngClass]="[item.clicked ? changeColor : '']">
+                        <div class="upper-container">
+                            <h2>{{ item.heading }}</h2>
+                            <img src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" class="container-img" />
+                        </div>
+                        <hr />
+                        <div class="lower-container">
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.detail }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Footer goes here</p>
+    </footer>
+</body>
+
+</html>
