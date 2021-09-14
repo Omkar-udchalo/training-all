@@ -1,0 +1,12 @@
+<div class="card" changeColor (click)="onCardClicked()" [ngClass]="cardItem.clicked ? 'toggleColor' : ''">
+    <div class="upper-container">
+        <h2>{{ cardItem.heading }}</h2>
+        <img src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg" class="container-img" />
+    </div>
+    <!-- <button (click)="onSelectToggle()">Select</button> -->
+    <hr />
+    <div class="lower-container">
+        <h4>{{ cardItem.title }}</h4>
+        <p>{{ cardItem.detail }}</p>
+    </div>
+</div>

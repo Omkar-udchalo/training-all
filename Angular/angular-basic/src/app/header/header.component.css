@@ -1,0 +1,50 @@
+.header {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    background-color: black;
+    color: white;
+}
+
+button {
+    background: #555;
+    border-style: none;
+    color: white;
+}
+
+button:hover {
+    background: rgb(219, 141, 141);
+}
+
+.header-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.notification {
+    background-color: #555;
+    color: white;
+    text-decoration: none;
+    padding: 15px 26px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.notification:hover {
+    background: rgb(219, 141, 141);
+}
+
+.notification .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: rgb(38, 0, 255);
+    color: white;
+}
