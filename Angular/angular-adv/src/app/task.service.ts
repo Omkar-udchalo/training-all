@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  tasks: string[] = [];
-  taskChanged = new Subject<String[]>();
-  // constructor(task: string) {}
-  storeTask(currentTask: string) {
-    // this.getTasks();
+  tasks = ['Get up at 5am', 'Exercise'];
+  taskChanged = new Subject<string[]>();
+
+  constructor(private storageService: StorageService) {}
+  storeTask(task: string) {
     if (!this.tasks) {
-      this.tasks = [currentTask];
+      this.tasks = [task];
+      this.taskChanged.next(this.tasks.slice());
+      this.storageService.storeInLocalStorage(this.tasks);
     } else {
-      this.tasks.push(currentTask);
+      this.tasks.push(task);
+      this.taskChanged.next(this.tasks.slice());
+      this.storageService.storeInLocalStorage(this.tasks);
     }
-    localStorage.setItem('tasks', JSON.stringify(this.tasks));
-    console.log('In service:' + currentTask);
-    this.taskChanged.next(this.tasks.slice());
   }
 
-  getTasks() {
-    this.tasks = JSON.parse(localStorage.getItem('tasks'));
-    // console.log(this.tasks);
-    console.log('In service' + this.tasks);
-    return this.tasks;
+  getTask() {
+    this.tasks = this.storageService.retriveLocal();
+    return this.tasks ? this.tasks.slice() : [];
   }
 }

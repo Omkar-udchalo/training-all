@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TaskService } from './task.service';
 import { Subscription } from 'rxjs';
@@ -7,24 +7,29 @@ import { Subscription } from 'rxjs';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
-  title = 'angular-adv';
   tasks: string[] = [];
   subscription: Subscription;
-  constructor(private taskService: TaskService) {}
-  ngOnInit(): void {
-    this.subscription = this.taskService.taskChanged.subscribe(
-      (tasks: string[]) => {
-        this.tasks = tasks;
-      }
-    );
-    this.tasks = this.taskService.getTasks();
+  constructor(private taskStoreService: TaskService) {}
+
+  ngOnInit() {
+    //retrive data of task
+    this.taskStoreService.taskChanged.subscribe((tasks: string[]) => {
+      console.log(tasks);
+
+      this.tasks = tasks;
+    });
+    this.tasks = this.taskStoreService.getTask();
   }
 
-  addTask(form: NgForm) {
-    console.log(form.value);
-    this.taskService.storeTask(form.value.task);
-    form.reset();
+  onTaskSubmit(taskForm: NgForm) {
+    // console.log(taskForm.value);
+    let task = taskForm.value.task;
+    //add the task using task Storage Service
+    // let newTask = new Task(taskForm.value);
+    this.taskStoreService.storeTask(task);
+    taskForm.reset();
   }
 }

@@ -1,0 +1,15 @@
+.card {
+    align-items: center;
+    height: 40px;
+    background: rgb(233, 156, 100);
+    border-radius: 9px;
+    width: 800px;
+    color: rgb(27, 21, 21);
+    padding-left: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.todo-item {
+    text-align: center;
+}

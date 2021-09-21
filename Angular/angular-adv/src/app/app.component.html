@@ -1,12 +1,23 @@
-<h1>Daily tasks</h1>
-<div class="container">
-    <form (ngSubmit)="addTask(f)" #f="ngForm">
-        <label for="task"> Enter Task Name </label>
-        <input type="text" id="task" name="task" ngModel />
-        <button type="submit">Add Task</button>
-    </form>
+<body>
+    <h1>Daily tasks</h1>
+    <div class="container">
+        <form #task="ngForm" (ngSubmit)="onTaskSubmit(task)">
+            <label class="customInput">
+        <input
+          type="text"
+          placeholder="✍ Enter your task"
+          name="task"
+          ngModel
+          required
+        />
+      </label>
+            <button type="submit">Submit</button>
+        </form>
 
-    <ul *ngFor="let task of tasks">
-        <li>{{ task }}</li>
-    </ul>
-</div>
+        <hr />
+        <h1>Todo List of Omkar</h1>
+        <div *ngFor="let item of tasks" class="todo-list">
+            <app-todo-card [todo-item]="item"></app-todo-card>
+        </div>
+    </div>
+</body>
