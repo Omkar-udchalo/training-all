@@ -1,0 +1,28 @@
+<h1>User Form</h1>
+<div class="uform">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" ngModel name="fname" id="fname" required="true" pattern="^[A-Za-z]{3,15}$" />
+            <!-- <span *ngIf="">Invalid Name</span> -->
+        </div>
+        <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" ngModel name="lname" id="lname" required="true" pattern="^[A-Za-z]{3,15}$" />
+        </div>
+        <div class="form-group">
+            <label for="addr">Address</label>
+            <textarea rows="5" minlength="8" maxlength="255" class="form-control" ngModel name="addr" id="addr" required="true"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="lname">Email</label>
+            <input type="text" class="form-control" ngModel name="email" id="email" required="true" pattern="^\S+@\S+$" />
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="tel" class="form-control" ngModel name="mobile" id="mobile" required="true" pattern="[0-9]{2}-[0-9]{10}" />
+        </div>
+
+        <button type="submit" [disabled]="!userForm.valid">Submit</button>
+    </form>
+</div>
