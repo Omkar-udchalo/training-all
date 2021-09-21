@@ -1,4 +1,9 @@
 <div class="proj-name">
-    <h1 (click)="onTitleClicked()">Angular Project 1</h1>
-    <p #detail>This is angular project</p>
+    <!-- <h1 (click)="onTitleClicked()">Angular Project 1</h1>
+    <p #detail>This is angular project</p> -->
+
+    <div *ngFor="let proj of projData; let ind = index">
+        <h1 (click)="onTitleClicked()">{{ proj.name }}</h1>
+        <p #detail>{{ proj.detail }}</p>
+    </div>
 </div>

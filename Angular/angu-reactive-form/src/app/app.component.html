@@ -1,0 +1,74 @@
+<div class="main">
+    <h1>Form</h1>
+    <div class="container">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <div>
+                <label>
+          First Name
+          <input formControlName="fname" placeholder="Your First name" />
+        </label>
+                <div *ngIf="
+            myForm.get('fname').invalid &&
+            (myForm.get('fname').dirty || myForm.get('fname').touched)
+          ">
+                    Please provide valid Firstname.
+                </div>
+            </div>
+
+            <div>
+                <label>
+          Last Name
+          <input formControlName="lname" placeholder="Your Last name" />
+        </label>
+                <div *ngIf="
+            myForm.get('lname').invalid &&
+            (myForm.get('lname').dirty || myForm.get('lname').touched)
+          ">
+                    Please provide valid Last name.
+                </div>
+            </div>
+
+            <div>
+                <label>
+          Email
+          <input formControlName="email" placeholder="Your email" />
+        </label>
+                <div *ngIf="
+            myForm.get('email').invalid &&
+            (myForm.get('email').dirty || myForm.get('email').touched)
+          ">
+                    Please provide a valid email address.
+                </div>
+            </div>
+            <div>
+                <label>
+          Address
+          <textarea
+            formControlName="address"
+            placeholder="Your Address"
+          ></textarea>
+        </label>
+                <div *ngIf="
+            myForm.get('address').invalid &&
+            (myForm.get('address').dirty || myForm.get('address').touched)
+          ">
+                    Please provide a valid address.
+                </div>
+            </div>
+
+            <div>
+                <label>
+          Mobile
+          <input formControlName="mobile" placeholder="Your Mobile" />
+        </label>
+                <div *ngIf="
+            myForm.get('mobile').invalid &&
+            (myForm.get('mobile').dirty || myForm.get('mobile').touched)
+          ">
+                    Please provide a valid Mobile.
+                </div>
+            </div>
+            <button type="submit" [disabled]="myForm.invalid">Send</button>
+        </form>
+    </div>
+</div>

@@ -1,9 +1,12 @@
 <h1>Daily tasks</h1>
-<ul *ngFor="let task of tasks">
-    <li>{{ task }}</li>
-</ul>
-<form (ngSubmit)="addTask(f)" #f="ngForm">
-    <label for="task"> Enter Task Name </label>
-    <input type="text" id="task" name="task" ngModel />
-    <button type="submit">Add Task</button>
-</form>
+<div class="container">
+    <form (ngSubmit)="addTask(f)" #f="ngForm">
+        <label for="task"> Enter Task Name </label>
+        <input type="text" id="task" name="task" ngModel />
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul *ngFor="let task of tasks">
+        <li>{{ task }}</li>
+    </ul>
+</div>

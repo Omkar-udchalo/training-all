@@ -1,0 +1,44 @@
+.main {
+    margin: 0;
+    padding: 0;
+    height: 1000px;
+    background: cornflowerblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    gap: 20px;
+    align-content: center;
+    align-items: center;
+}
+
+label {
+    display: flex;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+    border-radius: 9px;
+    background: darkblue;
+    color: darkgray;
+}
+
+.ng-touched .ng-invalid {
+    border: 2px solid red;
+}

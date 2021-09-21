@@ -10,7 +10,11 @@ export class TaskService {
   // constructor(task: string) {}
   storeTask(currentTask: string) {
     // this.getTasks();
-    this.tasks.push(currentTask);
+    if (!this.tasks) {
+      this.tasks = [currentTask];
+    } else {
+      this.tasks.push(currentTask);
+    }
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
     console.log('In service:' + currentTask);
     this.taskChanged.next(this.tasks.slice());
