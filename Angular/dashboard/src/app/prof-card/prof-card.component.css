@@ -1,0 +1,15 @@
+.prof {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid peru;
+}

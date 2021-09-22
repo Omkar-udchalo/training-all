@@ -1,0 +1,22 @@
+.mat-divider {
+    border-color: white;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr 1fr; */
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+}

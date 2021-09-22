@@ -1,0 +1,28 @@
+.c-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    color: whitesmoke;
+    background: linear-gradient(120deg, rgb(255, 0, 234), rgb(37, 138, 179));
+}
+
+.card-container {
+    display: flex;
+    /* gap: 20px; */
+    justify-content: space-between;
+}
+
+.mat-icon {
+    size: 32px;
+}
+
+h3 {
+    font-size: 32px;
+}
