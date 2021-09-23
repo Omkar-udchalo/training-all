@@ -1,0 +1,35 @@
+* {
+    font-size: 12px;
+}
+
+.mat-card {
+    margin: 15px 30px;
+}
+
+.mat-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-card-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    height: 25px;
+    width: 100px;
+    border-radius: 9px;
+    border: none;
+}
+
+.clear {
+    color: white;
+    background: tomato;
+}
+
+.advance {
+    color: white;
+    background: blue;
+}

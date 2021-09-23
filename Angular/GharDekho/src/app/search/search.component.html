@@ -1,0 +1,44 @@
+<mat-card>
+    <mat-card-content>
+        <mat-card-title>
+            <mat-form-field>
+                <mat-label>Property Type</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let propType of propertyTypes" [value]="propType">
+                        {{ propType }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Area</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let propArea of propertyAreas" [value]="propArea">
+                        {{ propArea }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Prices</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let propPrice of propertyPrices" [value]="propPrice">
+                        {{ propPrice }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- <mat-form-field> -->
+            <!-- <mat-label>Price</mat-label> -->
+            <!-- <input matInput placeholder="From" value="0" /> -->
+            <!-- <mat-icon>to</mat-icon> -->
+            <!-- <input matInput placeholder="To" value="0" /> -->
+            <!-- </mat-form-field> -->
+        </mat-card-title>
+
+        <mat-card-actions>
+            <button class="btn clear">Clear</button>
+            <button class="btn advance">Advance</button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>
