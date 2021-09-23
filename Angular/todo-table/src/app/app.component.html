@@ -1,0 +1,36 @@
+<body>
+    <h1>Daily tasks</h1>
+    <div class="container">
+        <form #task="ngForm" (ngSubmit)="onTaskSubmit(task)">
+            <label class="customInput"><span style="font-size: 32px"> ✍ </span>
+        <input
+          type="text"
+          placeholder="Enter your task"
+          name="task"
+          ngModel
+          required
+          pattern="^[a-zA-Z]{5,20}"
+        />
+      </label>
+            <button type="submit" [disabled]="!task.valid">Submit</button>
+        </form>
+
+        <hr />
+    </div>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <!-- <ng-container matColumnDef="no">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element.no }} </mat-cell>
+        </ng-container> -->
+
+        <!-- Task Column -->
+        <ng-container matColumnDef="task">
+            <mat-header-cell *matHeaderCellDef> Task </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{ element }} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+</body>
