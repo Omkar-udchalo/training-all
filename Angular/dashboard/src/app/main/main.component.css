@@ -1,4 +1,8 @@
 .chart-dashboard {
-    width: 600px;
-    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+#myChart {
+    padding: 20px;
 }

@@ -1,9 +1,15 @@
 <mat-sidenav-container>
-    <mat-sidenav mode="side" opened class="mat-elevation-z8">
+    <mat-sidenav mode="side" #sidebar opened class="mat-elevation-z8 sidenavbar">
         <app-sidebar></app-sidebar>
     </mat-sidenav>
-
     <mat-sidenav-content>
+        <button mat-icon-button class="burger-mobile" aria-label="Example icon-button with menu icon">
+      <mat-icon (click)="toggleSideBar()">menu</mat-icon>
+    </button>
+        <!-- <button mat-icon-button>
+      <mat-icon (click)="toggleSideBar()">menu</mat-icon>
+    </button> -->
+
         <!-- <div class="content mat-elevation-z8"> -->
         <app-main></app-main>
         <!-- </div> -->

@@ -15,19 +15,21 @@ export class MainComponent implements AfterViewInit {
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
     let mychart = new Chart(this.ctx, {
-      type: 'pie',
+      type: 'line',
       data: {
         labels: ['Car', 'Bike', 'Bicycle'],
         datasets: [
           {
-            label: '# of Sales',
+            label: '# of Sales 2021',
             data: [100, 250, 140],
-            backgroundColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-            ],
-            borderWidth: 1,
+            borderColor: 'rgb(75, 192, 192)',
+            borderWidth: 5,
+          },
+          {
+            label: '# of Sales 2020',
+            data: [90, 150, 30],
+            borderColor: 'rgb(156, 000, 192)',
+            borderWidth: 5,
           },
         ],
       },
