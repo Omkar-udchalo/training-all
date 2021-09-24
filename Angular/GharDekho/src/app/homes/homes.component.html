@@ -1,0 +1,42 @@
+<div class="container">
+    <mat-card class="example-card" *ngFor="let item of places_data">
+        <mat-card-header>
+            <mat-card-title>{{ item.title }} </mat-card-title>
+            <mat-card-subtitle class="price-detail">
+                {{ item.subtitle }}
+                <span> {{ "&#8377;" }} {{ item.price }} </span></mat-card-subtitle>
+        </mat-card-header>
+        <div class="image-container">
+            <img mat-card-image src="{{ item.image }}" alt="Flat" />
+            <button class="rent" mat-stroked-button>Rent</button>
+            <button class="buy" mat-stroked-button>Buy</button>
+        </div>
+        <mat-card-actions style="display: flex; justify-content: space-around">
+            <button class="btn btn-details" mat-button>
+        <mat-icon>info</mat-icon>
+      </button>
+            <button class="btn btn-share" mat-button>
+        <mat-icon>share</mat-icon>
+      </button>
+            <button class="btn btn-share" mat-button>
+        <mat-icon>shop</mat-icon>
+      </button>
+        </mat-card-actions>
+        <mat-card-content>
+            <ul class="details-prop">
+                <li>
+                    <p>Rating</p>
+                    <p>⭐⭐⭐⭐</p>
+                </li>
+                <li>
+                    <p>Area</p>
+                    <p>⭐⭐⭐⭐</p>
+                </li>
+                <li>
+                    <p>Furnishing</p>
+                    <p>⭐⭐⭐⭐</p>
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+</div>
