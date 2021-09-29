@@ -1,13 +1,31 @@
 .card {
     align-items: center;
-    height: 40px;
-    background: rgb(233, 156, 100);
+    height: 60px;
+    background: rgb(86, 160, 230);
     border-radius: 9px;
     width: 800px;
     color: rgb(27, 21, 21);
     padding-left: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     transition: 0.3s;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.action-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.green-icon {
+    color: green;
+}
+
+.btn-todo-item {
+    cursor: pointer;
+    border: none;
+    background: rgb(86, 160, 230);
 }
 
 .todo-item {

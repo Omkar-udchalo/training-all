@@ -12,4 +12,6 @@ export class StorageService {
     let tasks = JSON.parse(localStorage.getItem('tasks'));
     return tasks;
   }
+
+  removeItem(todoItem: string) {}
 }

@@ -32,4 +32,12 @@ export class AppComponent implements OnInit {
     this.taskStoreService.storeTask(task);
     taskForm.reset();
   }
+
+  onCheckClicked(todoItem: string) {
+    console.log('Checked ' + todoItem);
+  }
+
+  onDeleteClicked(todoItem: string) {
+    console.log('Delete ' + todoItem);
+  }
 }

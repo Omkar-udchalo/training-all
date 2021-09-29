@@ -17,7 +17,7 @@
         <hr />
         <h1>Todo List of Omkar</h1>
         <div *ngFor="let item of tasks" class="todo-list">
-            <app-todo-card [todo-item]="item"></app-todo-card>
+            <app-todo-card [todo-item]="item" (checkClicked)="onCheckClicked($event)" (delClicked)="onDeleteClicked($event)"></app-todo-card>
         </div>
     </div>
 </body>
