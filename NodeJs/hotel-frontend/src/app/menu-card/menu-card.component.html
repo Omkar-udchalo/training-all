@@ -1,0 +1,27 @@
+<div *ngFor="let menu of currentMenu; let i = index" class="section-menu container">
+    <div class="meal">
+        <img src="{{ menu.imageUrl }}" class="meal-img img-fluid" />
+        <div>
+            <p class="meal-title">{{ menu.title }}</p>
+            <ul class="meal-attributes">
+                <li class="meal-attribute">{{ "&#8377; " + menu.price }}</li>
+                <!-- <li class="meal-attribute">{{ menu.description }}</li> -->
+                <div class="action-btn">
+                    <li class="meal-attribute">
+                        <button *ngIf="!isAdmin" class="add-to-cart" (click)="onAddToCart(i)">
+              Add
+            </button>
+                        <button *ngIf="isAdmin" class="add-to-cart" (click)="onDelete(i)">
+              Delete
+            </button>
+                    </li>
+                    <li class="meal-attribute">
+                        <button class="add-to-cart" (click)="onDetailClicked(i)">
+              Details
+            </button>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>

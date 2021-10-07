@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="" *ngIf="!menuDetail">
+    <app-loader></app-loader>
+</div>
+<div class="row" *ngIf="menuDetail">
+    <div class="col-xs-12">
+        <div class="container mb-5">
+            <div class="text-center">
+                <img src="{{ menuDetail.imageUrl }}" class="rounded" alt="..." height="500px" width="800px" />
+            </div>
+            <div class="text-center">
+                <h2>{{ menuDetail.title }}</h2>
+                <p>{{ "&#8377; " + menuDetail.price }}</p>
+                <p>{{ menuDetail.description }}</p>
+            </div>
+        </div>
+    </div>
+</div>
