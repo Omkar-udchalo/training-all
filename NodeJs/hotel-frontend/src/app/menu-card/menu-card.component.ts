@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { Menu, MenuService } from '../menu-service.service';
 
 @Component({
@@ -12,12 +13,20 @@ export class MenuCardComponent implements OnInit {
   @Output() addToCardClicked = new EventEmitter<Menu>();
   @Output() deleteCardClicked = new EventEmitter<Menu>();
   currentMenu: Menu[] = [];
-  constructor(private menuService: MenuService, private router: Router) {}
+  constructor(
+    private menuService: MenuService,
+    private router: Router,
+    private auth: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.currentMenu = this.menuService.menus;
   }
   onAddToCart(index: number) {
+    // if (!this.auth.user) {
+    //   this.router.navigate(['/auth']);
+    //   return;
+    // }
     if (!this.isAdmin) {
       this.addToCardClicked.emit(this.currentMenu[index]);
     }

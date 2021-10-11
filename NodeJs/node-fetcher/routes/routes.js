@@ -18,4 +18,18 @@ router.get("/menu/:id", controller.getMenuById);
 // Update Menu
 router.post("/update-menu/:id", controller.updateMenu);
 
+//SignUp form
+router.post("/signup", controller.signUp);
+
+//Get Users
+router.get("/users", controller.getUsers);
+//Get User by id
+router.get("/user/:id", controller.getUserById);
+
+//login
+router.post("/login", controller.login);
+
+//order
+router.post("/order", controller.orderPost);
+
 exports.router = router;

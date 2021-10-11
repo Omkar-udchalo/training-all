@@ -28,7 +28,7 @@ class Menu {
             .collection("menu")
             .deleteOne({ _id: new mongodb.ObjectId(menuId) })
             .then((result) => {
-                console.log("Deleted");
+                // console.log("Deleted");
             })
             .catch((err) => {
                 console.log(err);

@@ -2,15 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddMenuComponent } from './add-menu/add-menu.component';
 import { AppComponent } from './app.component';
+import { CartComponent } from './cart/cart.component';
 import { DeleteMenuComponent } from './delete-menu/delete-menu.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { MenuDetailComponent } from './menu-detail/menu-detail.component';
 import { MenuComponent } from './menu/menu.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'add-menu', component: AddMenuComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'order', component: OrdersComponent },
+  { path: 'auth', component: LoginComponent },
   {
     path: 'delete-menu',
     component: DeleteMenuComponent,

@@ -1,44 +1,80 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hotel Gurukrupa</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#" style="font-weight: bold; color: rgb(235, 148, 34)">Hotel Gurukrupa</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
-            <div class="">
-                <ul class="navbar-nav">
-                    <div class="d-flex justify-content-space-evenly">
-                        <li class="nav-item">
-                            <button class="btn btn-primary" (click)="getHome()">Home</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-primary" (click)="getMenu()">Menu</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-primary">Orders</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-primary" (click)="onMenuAddedClicked()">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-between"
+      id="navbarNav"
+    >
+      <div class="">
+        <ul class="navbar-nav">
+          <div class="d-flex justify-content-space-evenly">
+            <li class="nav-item">
+              <button class="btn btn-primary" (click)="getHome()">Home</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" (click)="getMenu()">Menu</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary">Orders</button>
+            </li>
+            <li class="nav-item">
+              <button class="btn btn-primary" (click)="getCart()">Cart</button>
+            </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-primary"
+                (click)="onMenuAddedClicked()"
+                *ngIf="user && user.role === 'admin'"
+              >
                 Add Menu
               </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-primary" (click)="onMenuDelClicked()">
+            </li>
+            <li class="nav-item">
+              <button
+                class="btn btn-primary"
+                (click)="onMenuDelClicked()"
+                *ngIf="user && user.role === 'admin'"
+              >
                 Delete Menu
               </button>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-            <div class="">
-                <ul class="navbar-nav">
-                    <div>
-                        <li class="nav-item">
-                            <button class="btn btn-primary">Login</button>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="">
+        <ul class="navbar-nav">
+          <div>
+            <li class="nav-item">
+              <button
+                class="btn btn-primary"
+                (click)="signOutClicked()"
+                *ngIf="user"
+              >
+                Logout
+              </button>
+              <button
+                class="btn btn-primary"
+                (click)="authClicked()"
+                *ngIf="!user"
+              >
+                Login
+              </button>
+            </li>
+          </div>
+        </ul>
+      </div>
     </div>
+  </div>
 </nav>

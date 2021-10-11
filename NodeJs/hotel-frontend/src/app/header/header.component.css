@@ -1,7 +1,13 @@
+nav {
+    background-color: rgb(8, 5, 5);
+}
+
 .btn-primary {
     background-color: transparent;
     border: none;
-    color: black;
+    color: rgb(211, 151, 40);
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .nav-flex {

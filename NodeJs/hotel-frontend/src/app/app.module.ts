@@ -12,6 +12,10 @@ import { LoaderComponent } from './shared/loader/loader.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
 import { FormsModule } from '@angular/forms';
 import { DeleteMenuComponent } from './delete-menu/delete-menu.component';
+import { LoginComponent } from './login/login.component';
+import { CartComponent } from './cart/cart.component';
+import { FooterComponent } from './footer/footer.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { DeleteMenuComponent } from './delete-menu/delete-menu.component';
     LoaderComponent,
     AddMenuComponent,
     DeleteMenuComponent,
+    LoginComponent,
+    CartComponent,
+    FooterComponent,
+    OrdersComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRouting, FormsModule],
   providers: [],
