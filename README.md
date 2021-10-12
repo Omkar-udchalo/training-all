@@ -25,3 +25,6 @@ Access the assignments from HTML,CSS,JS on above 👆 website.
 
 ## AWS AND ANGULAR S3 BUCKET DEMO
   LINK ⚡ : https://github.com/OmkarM2310/aws-s3
+
+## AWS AND ANGULAR S3 BUCKET DEMO
+  LINK ⚡ : https://github.com/OmkarM2310/dynamo-aws
