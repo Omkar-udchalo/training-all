@@ -21,3 +21,7 @@ Access the assignments from HTML,CSS,JS on above 👆 website.
   Backend -  Rest api created with MongoDB
   
 👩‍💻 Github - https://github.com/OmkarM2310/training-all/tree/master/NodeJs
+
+
+## AWS AND ANGULAR S3 BUCKET DEMO
+  LINK ⚡ : https://github.com/OmkarM2310/aws-s3
