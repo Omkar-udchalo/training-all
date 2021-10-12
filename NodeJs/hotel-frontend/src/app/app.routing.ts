@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddMenuComponent } from './add-menu/add-menu.component';
+import { AdminOrderComponent } from './admin-order/admin-order.component';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
 import { DeleteMenuComponent } from './delete-menu/delete-menu.component';
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: 'add-menu', component: AddMenuComponent },
   { path: 'cart', component: CartComponent },
   { path: 'order', component: OrdersComponent },
+  { path: 'admin-order', component: AllOrdersComponent },
   { path: 'auth', component: LoginComponent },
   {
     path: 'delete-menu',

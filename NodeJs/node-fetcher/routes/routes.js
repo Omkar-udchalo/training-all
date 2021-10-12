@@ -32,4 +32,5 @@ router.post("/login", controller.login);
 //order
 router.post("/order", controller.orderPost);
 
+router.get("/orders", controller.getUsers);
 exports.router = router;

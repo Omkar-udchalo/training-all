@@ -5,12 +5,14 @@ import { pipe, Subject, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserOrder } from './cart/cart.component';
 import { Menu } from './menu-service.service';
+import { OrderModel } from './orders/orders.component';
 export class Cart {
   title: string = '';
   price: string = '';
   id: string | null | undefined = '';
   qty: number = 0;
   imageUrl: string = '';
+  status: string = 'placed';
   constructor(
     id: string | null | undefined,
     qty: number,
@@ -32,6 +34,7 @@ export class User {
   mobile: string;
   cart: Cart[] = [];
   order = [];
+  role: string | null = null;
   constructor(name: string, email: string, password: string, mobile: string) {
     this.name = name;
     this.email = email;
@@ -44,8 +47,10 @@ export class User {
   providedIn: 'root',
 })
 export class AuthService implements OnInit {
-  userChanged = new Subject<string>();
+  userChanged = new Subject<User>();
   user: any = null;
+  users: User[] = [];
+  allUsersChanged = new Subject<User[]>();
   constructor(private http: HttpClient, private router: Router) {}
   ngOnInit(): void {
     this.getUserLocal();
@@ -125,9 +130,14 @@ export class AuthService implements OnInit {
       }
     }
 
+    this.userChanged.next(this.user);
+
     console.log(this.user.cart);
   }
   showCart() {
+    this.userChanged.subscribe((data) => {
+      this.user = data;
+    });
     try {
       if (this.user.cart) {
         return this.user.cart;
@@ -139,7 +149,7 @@ export class AuthService implements OnInit {
     // return this.user.cart ? this.user.cart : [];
   }
 
-  placeOrder(cart: UserOrder) {
+  placeOrder(cart: UserOrder, id: string) {
     const config = {
       headers: new HttpHeaders().set('Content-Type', 'application/json'),
     };
@@ -149,7 +159,44 @@ export class AuthService implements OnInit {
       .post<any>('http://localhost:3000/order', this.user)
       .subscribe((data) => {
         console.log(data);
-        this.router.navigate(['/order']);
+        this.getUserById(id);
+        //new order given to db
+        //now fetch the user again;
+        this.router.navigate(['/menu']);
       });
+  }
+
+  getUserById(id: string) {
+    return this.http
+      .get(`http://localhost:3000/user/${id}`)
+      .subscribe((data) => {
+        this.user = JSON.parse(JSON.stringify(data));
+        // console.log(this.user);
+        this.userChanged.next(this.user);
+        // console.log(data);
+      });
+  }
+
+  getAllUsers() {
+    return this.http.get('http://localhost:3000/orders').subscribe((data) => {
+      // console.log(data);
+      // for(let item of data)
+      Object.values(data).forEach((value) => {
+        // this.users.push(Object.values(data[key]));
+        // console.log(value);
+        let myUser: User = value;
+        let userObj: User = new User(
+          myUser.name,
+          myUser.email,
+          myUser.password,
+          myUser.mobile
+        );
+        userObj.order = myUser.order;
+        userObj.role = myUser.role;
+        this.users.push(userObj);
+      });
+      // console.log(this.users);
+      this.allUsersChanged.next(this.users);
+    });
   }
 }

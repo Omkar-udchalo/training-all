@@ -21,12 +21,22 @@ export class HeaderComponent implements OnInit {
     });
     // this.auth.ngOnInit();
     this.user = this.auth.user;
-    console.log(this.user);
+    // console.log(this.user);
   }
 
   getMenu() {
     this.menuService.getMenuFromServer();
     this.router.navigate(['/menu']);
+  }
+
+  getOrderPage() {
+    this.auth.getUserById(this.auth.user._id);
+    this.router.navigate(['/order']);
+  }
+
+  getAdminOrderPage() {
+    this.auth.getUserById(this.auth.user._id);
+    this.router.navigate(['/admin-order']);
   }
 
   getHome() {

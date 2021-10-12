@@ -1,34 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService, User } from '../auth.service';
-export class OrderModel {
-  constructor(
-    public title: string,
-    public qty: string,
-    public price: string,
-    public imageUrl: string,
-    public id: string
-  ) {}
-}
-
-export class UserOrder {
-  date: string = '';
-  order: OrderModel[];
-  status = 'placed';
-  constructor(date: string, order: OrderModel[]) {
-    this.date = date;
-    this.order = order;
-  }
-}
+import { AuthService } from '../auth.service';
+import { OrderModel, UserOrder } from '../orders/orders.component';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css'],
+  selector: 'app-admin-order',
+  templateUrl: './admin-order.component.html',
+  styleUrls: ['./admin-order.component.css'],
 })
-export class OrdersComponent implements OnInit {
-  @Input() users: any;
-
+export class AdminOrderComponent implements OnInit {
+  @Input() user: any;
   userData: any = null;
   orders: any = [];
   userOrderData!: OrderModel[];
@@ -37,8 +18,6 @@ export class OrdersComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router) {
     this.userData = this.auth.user ? this.auth.user : null;
-    console.log(this.userData);
-
     this.ngOnInit();
     if (this.userData) {
       this.ngOnInit();
@@ -83,8 +62,6 @@ export class OrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.users);
-
     // this.auth.ngOnInit();
     if (!this.auth.user) {
       this.auth.ngOnInit();

@@ -19,5 +19,6 @@ app.get("/", (req, res) => {
 app.use(routes);
 
 mongoConnect(() => {
+    console.log("mongo server starting...");
     app.listen(3000);
 });

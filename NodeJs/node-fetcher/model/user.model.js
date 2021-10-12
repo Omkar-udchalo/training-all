@@ -27,7 +27,7 @@ class User {
             });
     }
     addToCart(userId) {
-        console.log("In user model");
+        // console.log("In user model");
         console.log(this);
         const db = getDb();
         return db

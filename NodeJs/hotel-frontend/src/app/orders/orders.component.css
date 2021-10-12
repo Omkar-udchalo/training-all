@@ -1,0 +1,16 @@
+.cart-card .inner-card {
+    /* padding: 10px; */
+    justify-content: space-around;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.row-order {
+    display: flex;
+}

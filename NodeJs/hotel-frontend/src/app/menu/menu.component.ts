@@ -24,6 +24,9 @@ export class MenuComponent implements OnInit {
   }
   addToCart(menuClicked: Menu) {
     // console.log(menuClicked);
+    if (!this.auth.user) {
+      this.router.navigate(['/auth']);
+    }
     if (menuClicked._id) {
       // console.log('clicked add to cart');
 

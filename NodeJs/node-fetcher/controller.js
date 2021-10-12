@@ -179,7 +179,7 @@ exports.orderPost = (req, res, next) => {
         .then((user) => {
             if (user) {
                 let currentOrder = req.body.order;
-                user.order.push(currentOrder);
+                user.order.unshift(currentOrder);
                 console.log("old user data");
                 console.log(user);
                 //create new menu object
@@ -203,6 +203,7 @@ exports.orderPost = (req, res, next) => {
                 userOrder
                     .addToCart(req.body._id)
                     .then((result) => {
+                        // return result;
                         res.json({ message: "Order Placed" });
                     })
                     .catch((err) => {

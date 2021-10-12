@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="card">
+    <div class="container" *ngFor="let item of orders">
+        <div class="row-order">
+            <img src="{{ item.imageUrl }}" height="100px" width="100px" />
+            <p>{{ item.title }}</p>
+            <p>{{ item.price }} * {{ item.qty }}</p>
+            <div>
+                {{ item.status ? item.status : "Delivered" }}
+            </div>
+            <div *ngIf="item.status">
+                <button (click)="changeStatusOrder()">Mark Delivered</button>
+            </div>
+        </div>
+    </div>
+</div>

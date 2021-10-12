@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { OrdersComponent } from './orders/orders.component';
+import { AdminOrderComponent } from './admin-order/admin-order.component';
+import { AllOrdersComponent } from './all-orders/all-orders.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { OrdersComponent } from './orders/orders.component';
     CartComponent,
     FooterComponent,
     OrdersComponent,
+    AdminOrderComponent,
+    AllOrdersComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRouting, FormsModule],
   providers: [],

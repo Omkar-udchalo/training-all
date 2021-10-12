@@ -27,10 +27,29 @@
               <button class="btn btn-primary" (click)="getMenu()">Menu</button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary">Orders</button>
+              <button
+                class="btn btn-primary"
+                *ngIf="user && user.role!=='admin'"
+                (click)="getOrderPage()"
+              >
+                Orders
+              </button>
+              <button
+                class="btn btn-primary"
+                *ngIf="user && user.role==='admin'"
+                (click)="getAdminOrderPage()"
+              >
+                Orders
+              </button>
             </li>
             <li class="nav-item">
-              <button class="btn btn-primary" (click)="getCart()">Cart</button>
+              <button
+                class="btn btn-primary"
+                *ngIf="user && user.role !== 'admin'"
+                (click)="getCart()"
+              >
+                Cart
+              </button>
             </li>
             <li class="nav-item">
               <button
